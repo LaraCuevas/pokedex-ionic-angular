@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService, Message } from '../services/data.service';
 import { PokeapiService } from '../services/pokeapi.service';
 
@@ -7,18 +7,13 @@ import { PokeapiService } from '../services/pokeapi.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit {
-  pokemons: any[] = [];
-  title: string = 'Pokedex';
+export class HomePage {
   constructor(
     private data: DataService,
     private pokeApiService: PokeapiService
-  ) {}
-
-  ngOnInit(): void {
-    this.pokeApiService.getAllPokemons().subscribe((res: any) => {
-      this.pokemons = res.results;
-      console.log(this.pokemons);
+  ) {
+    this.pokeApiService.getAllPokemons().subscribe((response) => {
+      console.log(response);
     });
   }
 

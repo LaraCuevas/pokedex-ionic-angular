@@ -9,7 +9,6 @@ import { PokeapiService } from '../services/pokeapi.service';
 })
 export class HomePage implements OnInit {
   pokemons: any[] = [];
-  title: string = 'Pokedex';
   constructor(
     private data: DataService,
     private pokeApiService: PokeapiService

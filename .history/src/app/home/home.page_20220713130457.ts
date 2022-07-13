@@ -9,7 +9,6 @@ import { PokeapiService } from '../services/pokeapi.service';
 })
 export class HomePage implements OnInit {
   pokemons: any[] = [];
-  title: string = 'Pokedex';
   constructor(
     private data: DataService,
     private pokeApiService: PokeapiService
@@ -18,7 +17,6 @@ export class HomePage implements OnInit {
   ngOnInit(): void {
     this.pokeApiService.getAllPokemons().subscribe((res: any) => {
       this.pokemons = res.results;
-      console.log(this.pokemons);
     });
   }
 
